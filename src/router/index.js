@@ -6,6 +6,8 @@ import Login from '@/components/Login'
 
 import Home from '@/components/Home'
 
+import Notfund404 from '@/components/Notfund404'
+
 Vue.use(Router)
 
 export default new Router({
@@ -20,6 +22,17 @@ export default new Router({
     	path: '/',
     	name: 'home',
     	component: Home
+    },
+    {
+      path: '/404',
+      hidden: true,
+      component: Notfund404
+    },
+    {
+      path: '*',
+      redirect: {
+        path: '/404'
+      }
     }
   ]
 })
