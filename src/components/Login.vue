@@ -19,7 +19,7 @@
 </template>
 
 <script>
-	import { requestLogin } from '../api/api'
+	import apiMe from '../api/index'
 	export default{
 		name: 'login',
 		data() {
@@ -83,7 +83,7 @@
 						//获取登录参数
 						
 						var userinfoPara = this.userInfo
-						requestLogin(userinfoPara).then(data => {
+						apiMe.requestLogin(userinfoPara).then(data => {
 							console.log(data);
 							var result = data['data'];
 							let { code, msg, user } = result;
